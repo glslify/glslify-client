@@ -1,0 +1,46 @@
+{
+  "name": "glslify-client",
+  "version": "1.0.0",
+  "description": "Convenience wrapper for handling glslify on the client, minimising the amount of requests to glslify-deps",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test | tap-spec"
+  },
+  "author": {
+    "name": "Hugh Kennedy",
+    "email": "hughskennedy@gmail.com",
+    "url": "http://hughsk.io/"
+  },
+  "dependencies": {
+    "events": "^1.0.2",
+    "glslify-bundle": "^2.0.1",
+    "glslify-detective": "^1.0.0",
+    "shallow-equals": "0.0.0",
+    "xhr": "^2.0.1"
+  },
+  "devDependencies": {
+    "glsl-fog": "0.0.1",
+    "glsl-noise": "0.0.0",
+    "glsl-smooth-min": "^1.0.0",
+    "glslify-deps": "^1.2.0",
+    "tap-spec": "^2.2.1",
+    "tape": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stackgl/glslify-client.git"
+  },
+  "keywords": [
+    "ecosystem:stackgl",
+    "browser",
+    "glsl",
+    "glslify",
+    "client",
+    "server"
+  ],
+  "homepage": "https://github.com/stackgl/glslify-client",
+  "bugs": {
+    "url": "https://github.com/stackgl/glslify-client/issues"
+  }
+}
