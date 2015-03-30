@@ -12,6 +12,10 @@ const fixtures = [
   '#pragma glslify: fog = require(glsl-smooth-min)\n#pragma glslify: fog = require(glsl-fog/exp2)'
 ]
 
+const failures = [
+  '#pragma glslify: noise = require(glsl-noise/simplex/d)'
+]
+
 test('parallel requests', function(t) {
   const client = Client(function(source, done) {
     setTimeout(function() {
@@ -31,4 +35,27 @@ test('parallel requests', function(t) {
       t.ok(typeof source === 'string', 'returns a string')
     })
   })(i)
+})
+
+test('error handling', function(t) {
+  const client = Client(function(source, done) {
+    setTimeout(function() {
+      deps().inline(source, __dirname, done)
+    }, Math.max(0, Math.random() * 1000 - 500))
+  })
+
+  client(fixtures[0], function(err, source) {
+    if (err) return t.fail(err.message || err)
+
+    client(failures[0], function(err, source) {
+      t.ok(err, 'error returned')
+
+      client(fixtures[0], function(err, source) {
+        if (err) return t.fail(err.message || err)
+
+        t.pass('result still available after an error!')
+        t.end()
+      })
+    })
+  })
 })

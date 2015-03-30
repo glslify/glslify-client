@@ -40,7 +40,11 @@ function Client(getTree) {
     running.setMaxListeners(Infinity)
 
     getTree(src, function(err, tree) {
-      if (err) return done(err)
+      if (err) {
+        running.emit('ready')
+        running = null
+        return done(err)
+      }
 
       depsCache = deps
       treeCache = tree
