@@ -1,6 +1,6 @@
 {
   "name": "glslify-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convenience wrapper for handling glslify on the client, minimising the amount of requests to glslify-deps",
   "main": "index.js",
   "license": "MIT",
