@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "events": "^1.0.2",
-    "glslify-bundle": "^2.0.1",
+    "glslify-bundle": "^4.0.0",
     "glslify-detective": "^1.0.0",
     "shallow-equals": "0.0.0",
     "xhr": "^2.0.1"
@@ -23,7 +23,7 @@
     "glsl-fog": "0.0.1",
     "glsl-noise": "0.0.0",
     "glsl-smooth-min": "^1.0.0",
-    "glslify-deps": "^1.2.0",
+    "glslify-deps": "^1.2.5",
     "tap-spec": "^2.2.1",
     "tape": "^3.5.0"
   },
